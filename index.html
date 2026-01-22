@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bala Brahmarsh | Embedded Systems Engineer</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #0f172a;
@@ -14,7 +16,11 @@
       --card: #ffffff;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -23,10 +29,12 @@
       line-height: 1.6;
     }
 
+    /* ================= HEADER ================= */
+
     header {
       padding: 80px 20px 60px;
       background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #fff;
+      color: #ffffff;
       text-align: center;
     }
 
@@ -42,36 +50,68 @@
       color: #cbd5f5;
     }
 
-nav {
-  position: sticky;
-  top: 0;
-  background: rgba(15, 23, 42, 0.95);
-  padding: 14px 0;
-  z-index: 1000;
-}
+    /* ================= CTA BUTTON ================= */
 
-nav a {
-  margin: 0 14px;
-  color: #93c5fd;
-  text-decoration: none;
-  font-weight: 500;
-}
+    .cta-buttons {
+      margin-top: 28px;
+    }
 
-nav a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    }
+
+    /* ================= NAVIGATION ================= */
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.95);
+      padding: 14px 0;
+      z-index: 1000;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 14px;
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* ================= SECTIONS ================= */
 
     section {
-      padding: 70px 20px;
+      padding: 90px 20px;
       max-width: 1100px;
       margin: auto;
+      animation: fadeUp 0.8s ease both;
     }
 
     section h2 {
       font-size: 2rem;
       color: var(--primary);
       margin-bottom: 30px;
+      letter-spacing: -0.5px;
     }
 
     .grid {
@@ -80,11 +120,19 @@ nav a:hover {
       gap: 24px;
     }
 
+    /* ================= CARDS ================= */
+
     .card {
       background: var(--card);
       padding: 26px;
       border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
     }
 
     .card h3 {
@@ -101,6 +149,8 @@ nav a:hover {
       margin-bottom: 8px;
     }
 
+    /* ================= SKILLS ================= */
+
     .skills span {
       display: inline-block;
       background: #e0e7ff;
@@ -111,6 +161,8 @@ nav a:hover {
       font-size: 0.85rem;
     }
 
+    /* ================= FOOTER ================= */
+
     footer {
       background: #020617;
       color: #94a3b8;
@@ -118,87 +170,57 @@ nav a:hover {
       text-align: center;
     }
 
-    footer a { color: #60a5fa; text-decoration: none; }
-
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
     }
 
-.cta-buttons {
-  margin-top: 28px;
-}
+    /* ================= ANIMATION ================= */
 
-.btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-.btn.primary {
-  background: var(--accent);
-  color: #ffffff;
-}
+    /* ================= RESPONSIVE ================= */
 
-.btn.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
-}
-    
-section {
-  padding: 90px 20px;
-}
-
-section h2 {
-  letter-spacing: -0.5px;
-}
-
-.card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-section {
-  animation: fadeUp 0.8s ease both;
-}
-
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Yandamuri Bala Brahmarsh</h1>
-  <p>Final-year Electronics & Communication Engineering student specializing in Embedded Systems, low-level C/C++ development, robotics, and Linux-based platforms.</p>
+  <p>
+    Final-year Electronics & Communication Engineering student specializing in
+    Embedded Systems, low-level C/C++ development, robotics, and Linux-based platforms.
+  </p>
+
   <div class="cta-buttons">
-  <a href="Bala_Brahmarsh_Resume.pdf" download class="btn primary">
-    Download Resume
-  </a>
-</div>
-  <nav>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <a href="Bala_Brahmarsh_Resume.pdf" download class="btn primary">
+      Download Resume
+    </a>
+  </div>
 </header>
+
+<nav>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <section id="projects">
   <h2>Selected Projects</h2>
@@ -212,6 +234,7 @@ section {
         <li>Focused on timing constraints and hardware–software debugging</li>
       </ul>
     </div>
+
     <div class="card">
       <h3>Traffic Analysis using Machine Learning</h3>
       <p>System-level project combining sensors, data pipelines, and performance-aware Python.</p>
@@ -221,6 +244,7 @@ section {
         <li>Explored computational efficiency trade-offs</li>
       </ul>
     </div>
+
     <div class="card">
       <h3>IR Proximity Sensor System</h3>
       <p>Analog electronics project emphasizing signal conditioning and threshold reliability.</p>
@@ -244,6 +268,7 @@ section {
         <li>Learned reliability considerations in automation systems</li>
       </ul>
     </div>
+
     <div class="card">
       <h3>V.I Microsystems</h3>
       <p><strong>Embedded Systems Intern</strong></p>
@@ -259,10 +284,18 @@ section {
 <section id="skills">
   <h2>Technical Skills</h2>
   <div class="card skills">
-    <span>Embedded C</span><span>C++ (Basic)</span><span>Python</span>
-    <span>Microcontrollers</span><span>Sensor Interfacing</span><span>IoT Systems</span>
-    <span>Linux (Basic)</span><span>GDB</span><span>Raspberry Pi</span>
-    <span>Android Studio</span><span>Git</span><span>OrCAD PSpice</span>
+    <span>Embedded C</span>
+    <span>C++ (Basic)</span>
+    <span>Python</span>
+    <span>Microcontrollers</span>
+    <span>Sensor Interfacing</span>
+    <span>IoT Systems</span>
+    <span>Linux (Basic)</span>
+    <span>GDB</span>
+    <span>Raspberry Pi</span>
+    <span>Android Studio</span>
+    <span>Git</span>
+    <span>OrCAD PSpice</span>
   </div>
 </section>
 
@@ -280,13 +313,10 @@ section {
   <div class="card">
     <p>Email: <a href="mailto:brahmarshb@gmail.com">brahmarshb@gmail.com</a></p>
     <p>Phone: +91 98667 99339</p>
-    <p>LinkedIn: <a href="#">Add your LinkedIn URL</a></p>
     <p>
-  GitHub:
-  <a href="https://github.com/bb-07" target="_blank">
-    github.com/bb-07
-  </a>
-</p>
+      GitHub:
+      <a href="https://github.com/bb-07" target="_blank">github.com/bb-07</a>
+    </p>
   </div>
 </section>
 
