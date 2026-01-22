@@ -207,10 +207,71 @@
         font-size: 2.2rem;
       }
     }
+    /* ================= CONTACT PROFILE STYLE ================= */
+
+.contact-dark {
+  background: #020617;
+  color: #ffffff;
+  padding: 100px 20px;
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+}
+
+.contact-links {
+  margin-bottom: 40px;
+}
+
+.contact-links a {
+  margin-right: 24px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-links a::after {
+  content: " ↗";
+  font-size: 0.9rem;
+}
+
+.contact-email {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  word-break: break-all;
+}
+
+.contact-phone {
+  font-size: 1.6rem;
+  color: #cbd5f5;
+}
+
+.back-to-top {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #1e293b;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.back-to-top:hover {
+  background: #2563eb;
+}
   </style>
 </head>
 
-<body>
+<body id="top">
 
 <header>
   <h1>Hi, I am Yandamuri Bala Brahmarsh</h1>
@@ -320,15 +381,24 @@
   </div>
 </section>
 
-<section id="contact">
-  <h2>Contact</h2>
-  <div class="card">
-    <p>Email: <a href="mailto:brahmarshb@gmail.com">brahmarshb@gmail.com</a></p>
-    <p>Phone: +91 98667 99339</p>
-    <p>
-      GitHub:
-      <a href="https://github.com/bb-07" target="_blank">github.com/bb-07</a>
-    </p>
+<section id="contact" class="contact-dark">
+  <div class="contact-container">
+
+    <a href="#top" class="back-to-top">↑</a>
+
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/bb-07" target="_blank">GitHub</a>
+    </div>
+
+    <div class="contact-email">
+      brahmarshb@gmail.com
+    </div>
+
+    <div class="contact-phone">
+      +91 98667 99339
+    </div>
+
   </div>
 </section>
 
