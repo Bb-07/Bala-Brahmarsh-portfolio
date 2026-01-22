@@ -283,6 +283,21 @@
   align-items: center;
   gap: 60px;
 }
+    
+.hero-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 300px;          /* perfect reference size */
+  aspect-ratio: 3 / 4;       /* portrait proportion */
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
 
 .hero-badge {
   display: inline-block;
@@ -311,6 +326,9 @@
   margin-top: 24px;
   font-size: 1.1rem;
   color: #475569;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.75;
 }
 
 .hero-btn {
