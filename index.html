@@ -12,7 +12,6 @@
       --primary: #0f172a;
       --secondary: #334155;
       --accent: #2563eb;
-      --bg: #f8fafc;
       --card: #ffffff;
     }
 
@@ -22,9 +21,22 @@
       padding: 0;
     }
 
+    /* ================= BODY BACKGROUND (PATTERN) ================= */
+
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background:
+        radial-gradient(
+          1200px 600px at 10% -10%,
+          rgba(37, 99, 235, 0.12),
+          transparent 60%
+        ),
+        radial-gradient(
+          1000px 500px at 90% 20%,
+          rgba(37, 99, 235, 0.08),
+          transparent 55%
+        ),
+        #f8fafc;
       color: var(--secondary);
       line-height: 1.6;
     }
