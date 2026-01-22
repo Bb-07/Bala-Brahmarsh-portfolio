@@ -268,22 +268,113 @@
 .back-to-top:hover {
   background: #2563eb;
 }
+    /* ================= HERO SECTION (IMAGE 1 STYLE) ================= */
+
+.hero {
+  background: #f8fafc;
+  padding: 100px 20px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  line-height: 1.05;
+  letter-spacing: -1px;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+.hero-text h1 span {
+  color: #0f172a;
+}
+
+.hero-text p {
+  max-width: 520px;
+  margin-top: 24px;
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.hero-btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
   </style>
 </head>
 
 <body id="top">
 
-<header>
-  <h1>Hi, I am Yandamuri Bala Brahmarsh</h1>
-  <p>
-    Final-year Electronics & Communication Engineering student specializing in
-    Embedded Systems, low-level C/C++ development, robotics, and Linux-based platforms.
-  </p>
+<header class="hero">
+  <div class="hero-container">
 
-  <div class="cta-buttons">
-    <a href="Bala_Brahmarsh_Resume.pdf" download class="btn primary">
-      Download Resume
-    </a>
+    <div class="hero-text">
+      <div class="hero-badge">👋 Welcome to my Space</div>
+
+      <h1>
+        YANDAMURI<br>
+        <span>BALA BRAHMARSH</span>
+      </h1>
+
+      <p>
+        Hi, I’m an <strong>Embedded Systems Engineer</strong> and final-year
+        Electronics & Communication Engineering student. I specialize in
+        low-level C/C++ development, embedded Linux platforms, robotics,
+        and hardware–software integration.
+      </p>
+
+      <a href="Bala_Brahmarsh_Resume.pdf" download class="hero-btn">
+        Download Resume
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <!-- photo will be added later -->
+    </div>
+
   </div>
 </header>
 
