@@ -454,6 +454,42 @@
   color: var(--accent);
   font-weight: 600;
 }
+/* ================= CUSTOM CURSOR (STEP 2) ================= */
+
+/* Hide default cursor on desktop only */
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+}
+
+/* Inner cursor dot */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+/* Outer cursor ring */
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid rgba(37, 99, 235, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
 
   </style>
 </head>
@@ -622,6 +658,41 @@
 <footer>
   <p>© 2026 Bala Brahmarsh · Embedded Systems Portfolio</p>
 </footer>
+
+  <!-- Custom Cursor Elements -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<script>
+  const dot = document.querySelector(".cursor-dot");
+  const ring = document.querySelector(".cursor-ring");
+
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  // Track mouse movement
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    // Dot follows mouse instantly
+    dot.style.left = mouseX + "px";
+    dot.style.top = mouseY + "px";
+  });
+
+  // Smooth trailing animation
+  function animateRing() {
+    ringX += (mouseX - ringX) * 0.15;
+    ringY += (mouseY - ringY) * 0.15;
+
+    ring.style.left = ringX + "px";
+    ring.style.top = ringY + "px";
+
+    requestAnimationFrame(animateRing);
+  }
+
+  animateRing();
+</script>
+
 <script>
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-links a");
