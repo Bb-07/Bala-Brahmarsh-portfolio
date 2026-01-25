@@ -490,6 +490,12 @@
   z-index: 9998;
   transform: translate(-50%, -50%);
 }
+/* Cursor grow state */
+.cursor-ring.active {
+  width: 56px;
+  height: 56px;
+  border-color: var(--accent);
+}
 
   </style>
 </head>
@@ -691,6 +697,34 @@
   }
 
   animateRing();
+
+  // ===== STEP 2: Grow effect on hover =====
+const hoverTargets = document.querySelectorAll(
+  "a, button, .card"
+);
+
+hoverTargets.forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    ring.classList.add("active");
+  });
+
+  el.addEventListener("mouseleave", () => {
+    ring.classList.remove("active");
+  });
+});
+
+  // ===== STEP 3: Magnetic pull effect =====
+hoverTargets.forEach(el => {
+  el.addEventListener("mousemove", (e) => {
+    const rect = el.getBoundingClientRect();
+
+    const elX = rect.left + rect.width / 2;
+    const elY = rect.top + rect.height / 2;
+
+    ringX += (elX - ringX) * 0.04;
+    ringY += (elY - ringY) * 0.04;
+  });
+});
 </script>
 
 <script>
